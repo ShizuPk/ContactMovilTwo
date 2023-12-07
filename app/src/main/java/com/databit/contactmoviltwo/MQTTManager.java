@@ -40,7 +40,7 @@ public class MQTTManager {
 
             @Override
             public void deliveryComplete(IMqttDeliveryToken token) {
-                // Handle message delivery complete
+                // Handle
             }
         });
 
