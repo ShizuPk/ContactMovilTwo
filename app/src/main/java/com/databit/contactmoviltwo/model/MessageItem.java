@@ -18,6 +18,14 @@ public class MessageItem {
         return sender;
     }
 
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     public String getMessage() {
         return message;
     }

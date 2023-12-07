@@ -69,6 +69,7 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
+
         // Configurar el adaptador para la lista de mensajes
         MessageListAdapter messageListAdapter = new MessageListAdapter(messageList);
         recyclerView.setAdapter(messageListAdapter);
