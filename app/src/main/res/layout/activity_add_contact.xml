@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".View.AddContactActivity">
+
+    <TextView
+        android:id="@+id/textViewFriendEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Correo del Amigo:"
+        android:layout_marginTop="8dp"/>
+
+    <EditText
+        android:id="@+id/editTextFriendEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewFriendEmail"
+        android:layout_marginTop="8dp"
+        android:inputType="textEmailAddress"
+        android:hint="Ingrese el correo del amigo"/>
+
+    <TextView
+        android:id="@+id/textViewContactName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Contacto:"
+        android:layout_below="@id/editTextFriendEmail"
+        android:layout_marginTop="16dp"/>
+
+    <EditText
+        android:id="@+id/editTextContactName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewContactName"
+        android:layout_marginTop="8dp"
+        android:inputType="textPersonName"
+        android:hint="Ingrese el nombre del contacto"/>
+
+    <Button
+        android:id="@+id/buttonAddContact"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextContactName"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/black"
+        android:text="Agregar Contacto"
+        android:onClick="agregarContacto"/>
+</RelativeLayout>
