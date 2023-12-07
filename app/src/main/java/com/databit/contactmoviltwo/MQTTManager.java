@@ -34,7 +34,6 @@ public class MQTTManager {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                // Handle new incoming message
                 String payload = new String(message.getPayload());
                 // TODO: Process the received message
             }
