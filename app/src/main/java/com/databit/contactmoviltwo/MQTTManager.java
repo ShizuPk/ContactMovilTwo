@@ -26,7 +26,6 @@ public class MQTTManager {
         mqttAndroidClient.setCallback(new MqttCallbackExtended() {
             @Override
             public void connectComplete(boolean reconnect, String serverURI) {
-                // Handle connection complete
             }
 
             @Override
