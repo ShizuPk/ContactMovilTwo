@@ -34,6 +34,8 @@ android {
 
 dependencies {
 
+    implementation ("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+    implementation ("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
     implementation ("com.github.bumptech.glide:glide:4.12.0") // Use the latest version available
     annotationProcessor ("com.github.bumptech.glide:compiler:4.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

@@ -34,6 +34,9 @@ public class ChatActivity extends AppCompatActivity {
     private EditText editTextMessage;
     private FirebaseUser currentUser;
 
+    private ArrayList<MessageItem> messageList;
+    private MessageListAdapter messageListAdapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,11 +47,15 @@ public class ChatActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         currentUser = firebaseAuth.getCurrentUser();
 
-        ArrayList<MessageItem> messageList = new ArrayList<>();
+        // Inicializar la lista y el adaptador
+        messageList = new ArrayList<>();
+        messageListAdapter = new MessageListAdapter(messageList);
 
         // Configurar RecyclerView para mostrar la lista de mensajes
         RecyclerView recyclerView = findViewById(R.id.recyclerViewMessages);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(messageListAdapter);
+
         buttonSendMessage = findViewById(R.id.buttonSendMessage);
         editTextMessage = findViewById(R.id.editTextMessage);
 
@@ -69,11 +76,6 @@ public class ChatActivity extends AppCompatActivity {
             }
         });
 
-
-        // Configurar el adaptador para la lista de mensajes
-        MessageListAdapter messageListAdapter = new MessageListAdapter(messageList);
-        recyclerView.setAdapter(messageListAdapter);
-
         // Obtener referencia a la base de datos de Firebase
         DatabaseReference messagesRef = FirebaseDatabase.getInstance().getReference("messages");
 
@@ -91,18 +93,22 @@ public class ChatActivity extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                // Implementación vacía
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                // Implementación vacía
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                // Implementación vacía
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
+                // Implementación vacía
             }
         });
     }
@@ -121,9 +127,6 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
-
-
-    // Método para obtener el nombre de usuario asociado con el usuario actual y enviar el mensaje
     // Método para obtener el nombre de usuario asociado con el usuario actual y enviar el mensaje
     private void ObtenerNombreUsuarioYEnviarMensaje(final String messageText) {
         // Verificar si el usuario actual no es nulo
