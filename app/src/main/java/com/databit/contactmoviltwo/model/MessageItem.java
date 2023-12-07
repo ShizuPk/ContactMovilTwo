@@ -5,6 +5,9 @@ public class MessageItem {
     private String sender;
     private String message;
 
+    public MessageItem() {
+
+    }
 
     public MessageItem(String sender, String message) {
         this.sender = sender;
