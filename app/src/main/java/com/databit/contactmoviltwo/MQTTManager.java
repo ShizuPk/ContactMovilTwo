@@ -30,7 +30,6 @@ public class MQTTManager {
 
             @Override
             public void connectionLost(Throwable cause) {
-                // Handle connection lost
             }
 
             @Override
